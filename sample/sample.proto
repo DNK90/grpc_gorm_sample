@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package sample;
+
+option go_package = "sample";
+import "github.com/infobloxopen/protoc-gen-gorm/options/gorm.proto";
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+service SampleService {
+    option (gorm.server).autogen = true;
+    rpc GetItem(Item) returns (Item) {
+        option (google.api.http) = {
+          post: "/v1/getItem"
+          body: "*"
+        };
+    }
+    rpc ListItems(EmptyParam) returns (stream Item) {
+        option (google.api.http) = {
+          post: "/v1/listItems"
+          body: "*"
+        };
+    }
+    rpc AddItem(Item) returns (Item) {
+        option (google.api.http) = {
+          post: "/v1/addItem"
+          body: "*"
+        };
+    }
+}
+
+message EmptyParam {}
+
+message Item {
+    option (gorm.opts) = {
+        ormable: true
+    };
+
+    string id = 1;
+    string name = 2;
+    string description = 3;
+}
