@@ -1,3 +1,15 @@
+* Install
+
+```
+go install \
+    github.com/golang/protobuf/protoc-gen-go \
+    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway \
+    github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger \
+    github.com/infobloxopen/protoc-gen-gorm
+```
+
+After install, `protoc-gen-go` `protoc-gen-grpc-gateway` `protoc-gen-swagger` and `protoc-gen-gorm` will be added into `$GOPATH/bin`
+
 * In order to generate `sample.pb.go` `sample.pb.gorm.go` and `sample.pb.gw.go` run the following script
 
 ```shell script
