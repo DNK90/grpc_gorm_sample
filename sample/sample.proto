@@ -28,9 +28,7 @@ service SampleService {
         };
     }
 }
-
 message EmptyParam {}
-
 message Item {
     option (gorm.opts) = {
         ormable: true

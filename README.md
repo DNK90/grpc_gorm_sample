@@ -1,4 +1,4 @@
-* In order to generate `sample.pb.go` and `sample.pb.gorm.go` run the following script
+* In order to generate `sample.pb.go` `sample.pb.gorm.go` and `sample.pb.gw.go` run the following script
 
 ```shell script
 protoc -I. -I$GOPATH/src -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --go_out=plugins=grpc:. --gorm_out=. --grpc-gateway_out=logtostderr=true:. -grpc-gateway_out=logtostderr=true:. sample/sample.proto sample/sample.proto
