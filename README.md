@@ -19,6 +19,8 @@ protoc -I. -I$GOPATH/src -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/th
 * For more detail on configuring gorm in protobuf, refer the following link:
 https://github.com/infobloxopen/protoc-gen-gorm
 
+* Run `dep ensure` to install all dependencies then run `main.go`
+
 * Add Item
 ```
 POST /v1/addItem
